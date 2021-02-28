@@ -1,0 +1,62 @@
+{
+  "name": "vue-open-swiper",
+  "version": "1.0.0",
+  "description": "Swiper component for Vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_ENV=production browserify -t vueify -e index.js -x vue -s VueopenSwiper -o dist/vue-open-swiper.js -d && uglifyjs dist/vue-open-swiper.js --source-map -o dist/vue-open-swiper.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/woyehaizaixiang/vue-open-swiper.git"
+  },
+  "keywords": [
+    "vue-open-swiper",
+    "vue open swiper",
+    "open-swiper",
+    "vue carrousel",
+    "vue swiper",
+    "vue slide",
+    "carrousel",
+    "swiper"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/woyehaizaixiang/vue-open-swiper/issues"
+  },
+  "homepage": "https://github.com/woyehaizaixiang/vue-open-swiper#readme",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ],
+      [
+        "vueify"
+      ]
+    ]
+  },
+  "browserify-css": {
+    "autoInject": true,
+    "minify": true,
+    "rootDir": "."
+  },
+  "dependencies": {
+    "swiper": "^3.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "cross-env": "^5.0.0",
+    "uglify-js": "^3.0.15",
+    "vueify": "^8.7.0"
+  }
+}
