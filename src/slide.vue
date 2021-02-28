@@ -20,6 +20,11 @@
       if (this.$parent.options.slideClass) {
         this.slideClass = this.$parent.options.slideClass
       }
+      this.$nextTick(()=>{
+        if (this.$parent.options.loop) {
+          this.$parent.swiper.reLoop()
+        }
+      })
     },
     updated: function() {
       this.update()
@@ -31,9 +36,6 @@
       update: function() {
         if (this.$parent && this.$parent.swiper && this.$parent.swiper.update) {
           this.$parent.swiper.update(true)
-          if (this.$parent.options.loop) {
-            this.$parent.swiper.reLoop()
-          }
         }
       }
     }
